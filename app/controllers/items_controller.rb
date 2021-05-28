@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.permit(:name)
+        params.permit(:name, :store_id)
     end
 
 
