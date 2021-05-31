@@ -15,15 +15,24 @@ class StoresController < ApplicationController
         render json: store
     end
 
-    def update
-        @store.update(store_params)
-        render json: @store
+    def destroy
+        store = Store.find(params[:id])
+        store.destroy
+        render json: {message: "#{store.name} has been deleted."}
     end
+
+    def update
+        item = Item.find(params[:id])
+        item.update(item_params)
+        render json: Item.new(item)
+    end
+
+    
 
     private
 
     def store_params
-        params.permit(:name)
+        params.require(:store).permit(:name, :id)
     end
 
 end

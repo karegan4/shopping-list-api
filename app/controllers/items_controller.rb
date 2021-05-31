@@ -20,10 +20,22 @@ class ItemsController < ApplicationController
         render json: @item
     end
 
+    def destroy
+        item = Item.find(params[:id])
+        item.destroy
+        render json: {message: "#{item.name} has been deleted."}
+    end
+
+    def update
+        item = Item.find(params[:id])
+        item.update(item_params)
+        render json: Item.new(item)
+    end
+
     private
 
     def item_params
-        params.permit(:name, :store_id)
+        params.require(:item).permit(:name, :id, :store_id)
     end
 
 
