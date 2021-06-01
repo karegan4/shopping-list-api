@@ -22,9 +22,9 @@ class StoresController < ApplicationController
     end
 
     def update
-        item = Item.find(params[:id])
-        item.update(item_params)
-        render json: Item.new(item)
+        store = Store.find(params[:id])
+        store.update(store_params)
+        render json: store
     end
 
     

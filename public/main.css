@@ -12,7 +12,7 @@
 #store-form-box{
   border: 1px solid black;
   text-align: center;
-  background-color: greenyellow;
+  background-color: rgb(118, 119, 199);
 }
 
 #current-items{
@@ -20,10 +20,26 @@
 }
 
 #store-names{
-  color: rgba(2, 90, 2, 0.89);
+  color: rgba(84, 15, 141, 0.89);
+
+  font-size: 25px;
 }
 
 #store-boxes{
   border: 1px solid black;
-  padding-left: 20px;
+  
+  width: 800px;
+}
+
+#stores{
+  font-weight: bold;
+}
+
+#stores-title{
+  font-size: 28px;
+}
+
+#edit-store-name{
+  font-size: 16px;
+  color: black
 }
